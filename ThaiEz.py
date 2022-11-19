@@ -63,7 +63,6 @@ class ThaiEz:
 			# if self.lang != "2":
 			reader = easyocr.Reader(self.lang)
 			result = reader.readtext(img)
-			print(result)
 			# if self.lang == "2":
 			# 	reader = easyocr.Reader(['th','en'])
 			# 	result = reader.readtext(img)

@@ -72,14 +72,14 @@ def run():
     filein = outputdir+"/"+ "blank.txt"
     #fileout = "D:/ocr/out/argong_end.txt"
     fileout = outputdir + "/" + "end.txt"
-    lang = "th"
+    lang = ["th"]
     language = langvar.get()
     if language == 1:
-        lang = "th"
+        lang = ["th"]
     if language == 2:
-        lang = "2"
+        lang = ["th","en"]
     if language == 3:
-        lang = "en"
+        lang = ["en"]
     ts = ThaiEz(startdir,outputdir,lang)
     # Ocr_status = StringVar()
     status_Var.set(ts.get_status())

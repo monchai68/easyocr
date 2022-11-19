@@ -12,7 +12,7 @@ class ThaiEz:
 	path_out = "D:\ocr\out"
 	files = [""]
 	status = ""
-	lang = "th"
+	lang = ["th"]
 	
 	def __init__(self,path_in,path_out,language):
 		self.path = path_in
@@ -60,12 +60,13 @@ class ThaiEz:
 		for  f in self.files:
 			image_file = self.path +"/"+f
 			img = Image.open(image_file) 
-			if self.lang != "2":
-				reader = easyocr.Reader([self.lang])
-				result = reader.readtext(img)
-			if self.lang == "2":
-				reader = easyocr.Reader(['th','en'])
-				result = reader.readtext(img)
+			# if self.lang != "2":
+			reader = easyocr.Reader(self.lang)
+			result = reader.readtext(img)
+			print(result)
+			# if self.lang == "2":
+			# 	reader = easyocr.Reader(['th','en'])
+			# 	result = reader.readtext(img)
 			ocr_result = self.ocr_array(result)
 			fileout = self.path_out+"/"+"out.txt"
 			self.output_file(fileout ,ocr_result)
